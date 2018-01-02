@@ -33,6 +33,20 @@ class SiteController extends Controller
         return $this->view->render($response, 'no-spots.twig');
     }
 
+    public function count($request, $response, $args)
+    {
+        $count = count(Contact::get()->where('name', '!=', NULL));
+        $tempCount = count(Temp::get());
+        $total = $count + $tempCount;
+        if (($count >= 25) || ($total >= 25)) {
+            return $response->withRedirect($this->router->pathFor('noSpots'));
+        }
+
+        $spotsLeft = 25 - $total;
+
+        return $this->view->render($response, 'count.twig', compact('spotsLeft'));
+    }
+
     public function batchSend($request, $response, $args)
     {
         $mg = Mailgun::create('key-1715c074f053673f6e3c4c79e8595390');

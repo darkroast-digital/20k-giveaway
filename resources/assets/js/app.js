@@ -161,7 +161,7 @@ if (overlay) {
 $(document).ready(function() {
 
     if (document.querySelector('.what-you-get')) {
-        var iconsSectionTop = $('.what-you-get').offset().top;
+        var iconsSectionTop = ($('.what-you-get').offset().top - 100);
     }
 
     var addIconsClass = function(){

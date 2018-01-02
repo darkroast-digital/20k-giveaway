@@ -1,0 +1,24 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+
+<section class="spots-left section">
+    <div class="spots-left__container container">
+        <div class="header">
+            <h2><strong>Great News</strong></h2>
+            <h2>We still have</h2>
+            <span class="remaining-spots">{{ spotsLeft }}</span>
+            <h2>spot{% if spotsLeft > 1 %}s{% endif %} left</h2>
+        </div>
+
+        <p>All you have to do is fill out the form on the next page to claim your <strong>FREE</strong> logo.</p>
+        <p>You will have 20 minutes to fill out the form. After that this session will time out and you may lose your spot.</p>
+        <p><strong>Ready? Go!</strong></p>
+    </div>
+
+    <div class="bottom-bar">
+        <a href="{{ path_for('form') }}" class="button">Claim your free logo</a>
+    </div>
+</section>
+
+{% endblock %}

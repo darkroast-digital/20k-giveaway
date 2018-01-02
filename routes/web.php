@@ -21,6 +21,7 @@ use App\Controllers\TempController;
 $app->get('/', HomeController::class . ':index')->setName("home");
 $app->post('/', HomeController::class . ':post');
 
+$app->get('/count', SiteController::class . ':count')->setName("count");
 $app->get('/submission', SiteController::class . ':form')->setName("form");
 $app->get('/success', SiteController::class . ':success')->setName("success");
 $app->post('/success', FormController::class . ':index')->setName("formSubmit");

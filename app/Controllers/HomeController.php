@@ -21,7 +21,7 @@ class HomeController extends Controller
         //     $spotsLeft = 25 - $spotsLeft;
         // }
 
-        return $this->view->render($response, 'home.twig', compact('spotsLeft', 'numContacts'));
+        return $this->view->render($response, 'home.twig');
     }
 
     public function post($request, $response, $args)

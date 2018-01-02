@@ -5,15 +5,15 @@
 */
 
 section {
-    height:100vh;
+    min-height:100vh;
     width:100vw;
-    background:url('http://darkroast.co/20k-giveaway/assets/img/bg.jpg');
+    background:url('/../assets/img/bg.jpg');
     background-size:cover;
     padding-top:5vh;
     overflow-x:hidden;
 
     &.home {
-        background:url('http://darkroast.co/20k-giveaway/assets/img/home-bg.png') no-repeat;
+        background:url('/../assets/img/home-bg.png') no-repeat;
         background-color:#E8E8E8;
         background-size:contain;
         background-position-y:1rem;
@@ -42,7 +42,8 @@ section {
     .container {
         max-width:100%;
         width:90vw;
-        height:90vh;
+        min-height:90vh;
+        margin-bottom:5vh;
         padding-top:5vh;
         background-color:rgba(#ffffff, .9);
         padding:5rem 10rem;
@@ -76,7 +77,7 @@ section {
         height:70%;
         top:20px;
         left:10rem;
-        background:url('http://darkroast.co/20k-giveaway/assets/img/fireworks.png') no-repeat;
+        background:url('/../assets/img/fireworks.png') no-repeat;
         background-size:contain;
         z-index:60;
 
@@ -186,6 +187,10 @@ section {
     
     &__container {
 
+        img {
+            max-width:600px;
+        }
+
         p {
             font-size:1.1rem;
 
@@ -196,10 +201,16 @@ section {
 
         h3 {
             font-weight:700;
+            margin-top:1rem;
 
-            &:nth-of-type(2) {
-                margin-top:3rem;
+            &:first-of-type {
+                margin-top:0;
             }
+        }
+
+        a {
+            font-weight:600;
+            padding:.5rem 2rem;
         }
     }
 }
@@ -224,10 +235,27 @@ section {
 
         h3 {
             font-weight:700;
+            margin-top:1rem;
 
-            &:nth-of-type(2) {
-                margin-top:3rem;
+            &:first-of-type {
+                margin-top:0;
             }
+        }
+
+        span {
+            color:white;
+            background-color:$primary;
+            font-weight:700;
+            width:2rem;
+            height:2rem;
+            border-radius:1rem;
+            line-height:2;
+            margin-bottom:.5rem;
+        }
+
+        a {
+            font-weight:600;
+            padding:.5rem 2rem;
         }
 
         .icons__container {
@@ -442,7 +470,7 @@ section {
             left:0;
             width:100%;
             height:125px;
-            background:url('http://darkroast.co/20k-giveaway/assets/img/get-started.png') no-repeat;
+            background:url('/../assets/img/get-started.png') no-repeat;
             background-size:contain;
 
             @media screen and (max-width:90em) {
@@ -728,7 +756,7 @@ section {
         height:65%;
         left:16%;
         top:12%;
-        background:url('http://darkroast.co/20k-giveaway/assets/img/congrats-stamp.png') no-repeat;
+        background:url('/../assets/img/congrats-stamp.png') no-repeat;
         background-size:contain;
         z-index:60;
 
@@ -753,7 +781,7 @@ section {
         height:65%;
         left:10%;
         top:12%;
-        background:url('http://darkroast.co/20k-giveaway/assets/img/congrats-fireworks.png') no-repeat;
+        background:url('/../assets/img/congrats-fireworks.png') no-repeat;
         background-size:contain;
         z-index:60;
 
@@ -903,7 +931,7 @@ section {
         height:65%;
         left:16%;
         top:12%;
-        background:url('http://darkroast.co/20k-giveaway/assets/img/sorry-stamp.png') no-repeat;
+        background:url('/../assets/img/sorry-stamp.png') no-repeat;
         background-size:contain;
         z-index:60;
 
