@@ -1,0 +1,48 @@
+<h3>New Order</h3>
+
+<h4>Customer Details</h4>
+<hr>
+<ul>
+    <li><strong>Name:</strong> {{ contact.name }}</li>
+    <li><strong>Email:</strong> {{ contact.email }}</li>
+    <li><strong>Phone:</strong> {{ contact.phone }}</li>
+</ul>
+
+<h4>Company Details</h4>
+<hr>
+<ul>
+    <li><strong>Company Name:</strong> {{ params.company }}</li>
+    <li><strong>Subtitle/Tagline:</strong> {{ params.tagline }}</li>
+    <li><strong>Business Description:</strong> {{ params.businessDesc }}</li>
+</ul>
+
+<h4>Order Details</h4>
+<hr>
+<ul>
+    <li><strong>Logo Type:</strong>
+        <ul>
+            {% for type in params.logoType %}
+                <li>{{ type }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li><strong>Typography:</strong>
+        <ul>
+            {% for typography in params.typography %}
+                <li>{{ typography }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li><strong>Describe Your Ideal Logo:</strong>
+        <ul>
+            {% for desc in params.description %}
+                <li>{{ desc }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li><strong>Themes and Images:</strong> {{ params.themes }}</li>
+    <li><strong>Colors and Textures:</strong> {{ params.colors }}</li>
+    <li><strong>Example #1:</strong> {{ params.example1 }}</li>
+    <li><strong>Example #2:</strong> {{ params.example2 }}</li>
+    <li><strong>Additional Instructions:</strong> {{ params.instructions }}</li>
+</ul>

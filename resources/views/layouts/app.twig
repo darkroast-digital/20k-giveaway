@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Viewport Meta -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Styles -->
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url }}/assets/css/app.css">
+
+    <!-- Mobile Theme Colour -->
+
+    <meta name="theme-color" content="#E8E8E8">
+
+    <!-- Title and Description -->
+
+    <title>$20K Giveaway! - Presented by DarkRoast Digital</title>
+    <meta name="description" content="To kick off the new year we’re giving away 100 free logos to any new business throughout the month of January. No Cost, No Fine Print, No B.S. The only catch is that this offer is only available to NEW businesses.">
+    <meta name="keywords" content="darkroast digital, logos, logo, logo design, giveaway, new years, january 2018, new business, free logos">
+
+    <!-- Favicons -->
+
+    <link rel="icon" href="{{ url }}/assets/img/fav.png">
+    
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="$20K Giveaway! - Presented by DarkRoast Digital">
+    <meta property="og:description" content="That's right. To kick off the new year we’re giving away 100 free logos to any new business throughout the month of January. No Cost, No Fine Print, No B.S. The only catch is that this offer is only available to NEW businesses.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="darkroast.co/20k-giveaway">
+    <meta property="og:site_name" content="$20K Giveaway! - Presented by DarkRoast Digital">
+    <meta property="og:image" content="{{ url }}/assets/img/og.jpg">
+    
+
+    <!--[if lt IE 9]>
+     <script src="js/polyfill/html5-shiv.js"></script>
+  <![endif]-->
+
+
+</head>
+<body>
+    {% include 'partials/off-canvas.twig' %}
+    {% include 'partials/flash.twig' %}
+    <div class="{% block pageclass %}{% endblock %}" id="app">
+            <div class="content" id="fullpage">
+                {% include 'partials/overlay.twig' %}
+                {% block content %}{% endblock %}
+            </div>
+    </div>
+
+    <script src="{{ url }}/assets/js/app.js"></script>
+    {% block log %}{% endblock %}
+
+
+    {# Mister Sandman...sand me a man... #}
+</body>
+</html>

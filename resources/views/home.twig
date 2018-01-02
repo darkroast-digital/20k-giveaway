@@ -1,0 +1,89 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+
+<section class="home section">
+    <div class="home__container container">
+        <h1>$20K Giveaway!</h1>
+        <h2><strong>100 Free</strong> professionally designed logos. Worth $200 each.</h2>
+        <h3>Presented by</h3>
+        <img class="darkroast" src="{{ url }}/assets/img/darkroast_digital.png" alt="DarkRoast Digital" draggable="false">
+    </div>
+
+    <div class="bottom-bar">
+        <a href="#about">
+            <p><strong>Free to Enter.</strong> Accepting entries until January 25th, 2018.</p>
+            <p><small>Learn more</small></p>
+            <i class="fa fa-caret-down" aria-hidden="true"></i>
+        </a>
+    </div>
+</section>
+
+<section class="about section" id="about">
+    <div class="about__container container">
+        <h3>Wait, what?</h3>
+        <p>That’s right. To kick off the new year we’re giving away 100 free logos to any new business throughout the month of January. No Cost, No Fine Print, No B.S. The only catch is that this offer is only available to <strong>NEW</strong> businesses.</p>
+
+        <h3>But why?</h3>
+        <p>Well, at DarkRoast Digital we’re passionate about helping people and businesses develop unique, professional, and memorable brands. A professionally design logo can communicate a lot about you and your brand, and for a new business it can help you make a great first impression. And we want to help a bunch of people off to a great start in this new year.</p>
+        <p>For many people, we’re hoping a new professionally design logo will help inspire and motivate you to finally start or grow the business that you’ve been talking and dreaming about... Also, we just really like creating logos.</p>
+    </div>
+</section>
+
+<section class="what-you-get section">
+    <div class="what-you-get__container container">
+        <h3>Ok...How?!</h3>
+        <p>On a random day of every week, for the next 4 weeks in Janurary, we’ll open up our registration form. All you have to do to get your free logo is be one of the first 25 people to register. First come, First Serve. That’s it!</p>
+
+        <h3>WHAT YOU GET</h3>
+        <div class="icons__container">
+            <div class="icon icon-1">
+                <div class="img__container">
+                    <img src="{{ url }}/assets/img/logo-design-icon.png" draggable="false">
+                </div>
+                <p>1 Unique Logo Design</p>
+            </div>
+
+            <div class="icon icon-2">
+                <div class="img__container">
+                    <img src="{{ url }}/assets/img/delivery-icon.png" draggable="false">
+                </div>
+                <p>Delivered in 5-7 days</p>
+            </div>
+
+            <div class="icon icon-3">
+                <div class="img__container">
+                    <img src="{{ url }}/assets/img/revision-icon.png" draggable="false">
+                </div>
+                <p>1 Revision</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if (spotsLeft != 0) and (numContacts < 25) %}
+<section class="spots-left section">
+    <div class="spots-left__container container">
+        <div class="header">
+            <h2><strong>Great News</strong></h2>
+            <h2>We still have</h2>
+            <span class="remaining-spots">{{ spotsLeft }}</span>
+            <h2>spot{% if spotsLeft > 1 %}s{% endif %} left</h2>
+        </div>
+
+        <p>All you have to do is fill out the form on the next page to claim your <strong>FREE</strong> logo.</p>
+        <p>You will have 20 minutes to fill out the form. After that this session will time out and you may lose your spot.</p>
+        <p><strong>Ready? Go!</strong></p>
+    </div>
+
+    <div class="bottom-bar">
+        <a href="{{ path_for('form') }}" class="button">Claim your free logo</a>
+    </div>
+</section>
+
+{% else %}
+    {% include 'no-spots.twig' %}
+{% endif %}
+
+
+{% endblock %}

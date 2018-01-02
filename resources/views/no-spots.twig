@@ -1,0 +1,38 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+
+<section class="no-entries">
+    <div class="no-entries__container container">
+        <div class="content">
+            <h2>Sorry</h2>
+            <h3>All 25 entries for this week have been taken</h3>
+            <div class="bottom">
+                <p>But don't worry. You can still get in next week. Sign up below to be notified as soon as we re-open the entries for next week</p>
+                <div class="form__container">
+                    <form action="{{ path_for('subscribeSubmit') }}" method="post" class="subscribe-form">
+                        <div class="container--full">
+                            <div class="column-9">
+                                <input type="email" name="email" placeholder="Your Email">
+                            </div>
+                            <div class="column-3">
+                                <button class="submit button">Sign Up</button>
+                            </div>
+                            <div class="column-12">
+                                <input type="checkbox" name="subscribe" checked> <small>Subscribe to receive notifications on other cool DarkRoast Digital stuff too.</small>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <p>In the meantime, feel free to check out some of our work and see if there is anything else we can do for you to help get your new business started off right.</p>
+                <div class="socials">
+                    <a href="https://express.darkroast.co/" target="_blank"><img src="{{ url }}/assets/img/dr_logo.png" alt="DarkRoast Website"></a>
+                    <a href="https://www.facebook.com/darkroastdigital/" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/darkroast.co/" target="_blank"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

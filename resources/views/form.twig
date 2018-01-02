@@ -1,0 +1,407 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+
+<section class="product-form" id="product-form">
+    <div class="product-form__container container">
+        <p>This information will help us to design the perfect logo for your new business.</p>
+        <div class="form__container">
+            <form action="{{ path_for('formSubmit') }}" method="post" class="form product-form">
+                <div class="field half-width">
+                    <label for="company">Company Name</label>
+                    <input type="text" name="company" required>
+                </div>
+
+                <div class="field half-width">
+                    <label for="tagline">Subtitle/Tagline <small>optional</small></label>
+                    <input type="text" name="tagline">
+                </div>
+
+                <div class="field full-width">
+                    <label for="businessDesc">Briefly describe business <small>i.e. Industry, Services, Products.</small></label>
+                    <input type="text" name="businessDesc" required>
+                </div>
+
+                <div class="field logo-type full-width">
+                    <label>Logo Type <small>you can select more than one</small></label>
+                    <div>
+                        <label>
+                            <span>
+                                <input type="checkbox" name="logoType[]" value="symbol">
+                                Symbol
+                            </span>
+                            <img src="{{ url }}/assets/img/logo-symbol.jpg">
+                        </label>
+                        <label>
+                            <span>
+                                <input type="checkbox" name="logoType[]" value="wordmark">
+                                Wordmark
+                            </span>
+                            <img src="{{ url }}/assets/img/logo-wordmark.jpg">
+                        </label>
+                        <label>
+                            <span>
+                                <input type="checkbox" name="logoType[]" value="lettermark">
+                                Lettermark
+                            </span>
+                            <img src="{{ url }}/assets/img/logo-lettermark.jpg">
+                        </label>
+                        <label>
+                            <span>
+                                <input type="checkbox" name="logoType[]" value="emblem">
+                                Emblem
+                            </span>
+                            <img src="{{ url }}/assets/img/logo-emblem.jpg">
+                        </label>
+                        <label>
+                            <span>
+                                <input type="checkbox" name="logoType[]" value="combination">
+                                Combination
+                            </span>
+                            <img src="{{ url }}/assets/img/logo-combination.jpg">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field typography full-width">
+                    <label>Typography <small>you can select more than one</small></label>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="typography[]" value="script">
+                            <img src="{{ url }}/assets/img/typography/script.jpg" alt="script">
+                        </label>
+                        <label>
+                            <input type="checkbox" name="typography[]" value="serif">
+                            <img src="{{ url }}/assets/img/typography/serif.jpg" alt="serif">
+                        </label>
+                            <label>
+                                <input type="checkbox" name="typography[]" value="sans-serif">
+                            <img src="{{ url }}/assets/img/typography/sans-serif.jpg" alt="sans-serif">
+                        </label>
+                            <label>
+                                <input type="checkbox" name="typography[]" value="slab">
+                            <img src="{{ url }}/assets/img/typography/slab.jpg" alt="slab">
+                        </label>
+                            <label>
+                                <input type="checkbox" name="typography[]" value="mono">
+                            <img src="{{ url }}/assets/img/typography/mono.jpg" alt="mono">
+                        </label>
+                            <label>
+                                <input type="checkbox" name="typography[]" value="hand">
+                            <img src="{{ url }}/assets/img/typography/hand.jpg" alt="hand">
+                        </label>
+                            <label>
+                                <input type="checkbox" name="typography[]" value="decorative">
+                            <img src="{{ url }}/assets/img/typography/decorative.jpg" alt="decorative">
+                        </label>
+                            <label>
+                                <input type="checkbox" name="typography[]" value="modern">
+                            <img src="{{ url }}/assets/img/typography/modern.jpg" alt="modern">
+                        </label>
+                            <label>
+                                <input type="checkbox" name="typography[]" value="retro">
+                            <img src="{{ url }}/assets/img/typography/retro.jpg" alt="retro">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field logo-desc full-width">
+                    <label>Describe your ideal logo <small>you can select more than one</small></label>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Adventurous">Adventurous
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Artistic">Artistic
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Athletic">Athletic
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Bold">Bold
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Bright">Bright
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Business-like">Business-like
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Busy">Busy
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Calm">Calm
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Charming">Charming
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Cheerful">Cheerful
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Chic">Chic
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Classic">Classic
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Clever">Clever
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Colourful">Colourful
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Conservative">Conservative
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Contemporary">Contemporary
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Creative">Creative
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Cutting Edge">Cutting Edge
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Delicate">Delicate
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Detailed">Detailed
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Earthy">Earthy
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Elegant">Elegant
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Energetic">Energetic
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Exciting">Exciting
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Familiar">Familiar
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Fancy">Fancy
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Fashionable">Fashionable
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Festive">Festive
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Fierce">Fierce
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Flirty">Flirty
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Formal">Formal
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Fresh">Fresh
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Fun">Fun
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Futuristic">Futuristic
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Glamorous">Glamorous
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Graceful">Graceful
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Hip">Hip
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Industrial">Industrial
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Innovative">Innovative
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Lively">Lively
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Majestic">Majestic
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Modern">Modern
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Natural">Natural
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Nautical">Nautical
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Organic">Organic
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Playful">Playful
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Powerful">Powerful
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Quirky">Quirky
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Retro">Retro
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Rustic">Rustic
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Silly">Silly
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Sleek">Sleek
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Strong">Strong
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Stunning">Stunning
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Stylish">Stylish
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Techy">Techy
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Urban">Urban
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Vintage">Vintage
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Wild">Wild
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Witty">Witty
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Wistful">Wistful
+                        </label>
+                        <label>
+                            <input type="checkbox" name="description[]" value="Youthful">Youthful
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="field half-width">
+                    <label for="themes-images">Themes and Images <small>i.e. Mountains, Ice, Lightning Bolts, 3 Cats, etc</small></label>
+                    <input type="text" name="themes">
+                </div>
+
+                <div class="field half-width">
+                    <label for="colors-textures">Colors and Textures <small>i.e. Blue & Gold or Red, Black, Yellow</small></label>
+                    <input type="text" name="colors">
+                </div>
+
+                <div class="field half-width">
+                    <label for="example1">Example #1 <small><span>- Examples of logos you like, by name or include link</span></small></label>
+                    <input type="text" name="example1">
+                </div>
+
+                <div class="field half-width">
+                    <label for="example2">Example #2</label>
+                    <input type="text" name="example2">
+                </div>
+
+                <div class="field additional-instructions full-width">
+                    <label for="instructions">Additional Instructions</label>
+                    <textarea name="instructions"></textarea>
+                </div>
+
+                <p>Contact Information</p>
+
+                <div class="field full-width">
+                    <label for="name">Full Name</label>
+                    <input type="text" name="name" required>
+                </div>
+
+                <div class="field half-width">
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" required>
+                </div>
+
+                <div class="field half-width">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" name="phone" required>
+                </div>
+                
+                <button class="button submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block log %}
+
+<script>
+    var ip;
+
+    $.get('https://ipinfo.io', function(response) {
+        ip = response.ip;
+    }, 'jsonp');
+
+    setInterval(function(){
+        $.ajax({
+            type: 'post',
+            url: "{{ path_for('log') }}",
+            data: {
+                ip: ip
+            }
+        });
+        // .done(function (response) {
+        //     console.log('Success: ' + response);
+        // })
+        // .fail(function (data) {
+        //     console.log('Fail: ' + data);
+        // });
+    }, 10000);
+
+    window.addEventListener('beforeunload', function(e) {
+        $.ajax({
+            type: 'post',
+            url: "{{ path_for('log.delete') }}",
+            data: {
+                ip: ip
+            }
+        });
+        // .done(function (response) {
+        //     console.log('Success: ' + response);
+        // })
+        // .fail(function (data) {
+        //     console.log('Fail: ' + data);
+        // });
+
+        $.ajax({
+            type: 'post',
+            url: "{{ path_for('formSubmit') }}",
+            data: {
+                ip: ip
+            }
+        });
+        // .done(function (response) {
+        //     console.log('Success: ' + response);
+        // })
+        // .fail(function (data) {
+        //     console.log('Fail: ' + data);
+        // });
+    });
+</script>
+
+{% endblock %}
