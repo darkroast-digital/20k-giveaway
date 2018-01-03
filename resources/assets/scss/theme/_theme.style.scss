@@ -196,7 +196,7 @@ section {
         img {
             max-width:600px;
 
-            @media screen and (max-width:64em) {
+            @media screen and (max-width:90em) {
                 max-width:60%;
                 margin-bottom:1rem;
             }
@@ -262,15 +262,21 @@ section {
             color:white;
             background-color:$primary;
             font-weight:700;
-            width:2rem;
-            height:2rem;
-            border-radius:1rem;
             line-height:2;
             margin-bottom:.5rem;
+            padding:.75rem 1rem;
+            border-radius:2rem;
+
+            &:first-of-type {
+                padding:.75rem 1.15rem;
+            }
+
+            @media screen and (max-width:90em) {
+                padding:.75rem 1.1rem;
+            }
 
             @media screen and (max-width:48em) {
                 padding:.75rem 1rem;
-                border-radius:2rem;
 
                 &:first-of-type {
                     padding:.75rem 1.2rem;
@@ -283,11 +289,9 @@ section {
         }
 
         .rules {
-
-            @media screen and (max-width:48em) {
-                p {
-                    margin-top:1rem;
-                }
+            
+            p {
+                margin-top:1rem;
             }
         }
 
