@@ -34,7 +34,7 @@ section {
             padding:5rem;
 
             @media screen and (max-width:32em) {
-                padding:3rem 1rem;
+                padding:1rem;
             }
         }
     }
@@ -74,8 +74,8 @@ section {
         content:'';
         position:absolute;
         width:100%;
-        height:70%;
-        top:20px;
+        height:100%;
+        top:0;
         left:10rem;
         background:url('/../assets/img/fireworks.gif') no-repeat;
         background-size:contain;
@@ -88,7 +88,11 @@ section {
         @media screen and (max-width:64em) {
             left:5%;
             width:90%;
-            opacity:.75;
+        }
+
+        @media screen and (max-width:32em) {
+            left:0;
+            width:150%;
         }
     }
 
@@ -113,7 +117,8 @@ section {
             }
 
             @media screen and (max-width:32em) {
-                font-size:3rem;
+                font-size:2.5rem;
+                margin-top:1rem;
             }
         }
 
@@ -153,6 +158,7 @@ section {
         text-align:center;
         color:white;
         margin-top:1rem;
+        z-index:100;
 
         @media screen and (max-width:48em) {
             padding:1.25rem 0;
@@ -189,6 +195,16 @@ section {
 
         img {
             max-width:600px;
+
+            @media screen and (max-width:64em) {
+                max-width:60%;
+                margin-bottom:1rem;
+            }
+
+            @media screen and (max-width:32em) {
+                max-width:100%;
+                margin-bottom:1rem;
+            }
         }
 
         p {
@@ -251,6 +267,28 @@ section {
             border-radius:1rem;
             line-height:2;
             margin-bottom:.5rem;
+
+            @media screen and (max-width:48em) {
+                padding:.75rem 1rem;
+                border-radius:2rem;
+
+                &:first-of-type {
+                    padding:.75rem 1.2rem;
+                }
+            }
+
+            @media screen and (max-width:32em) {
+                padding:.75rem 1.1rem;
+            }
+        }
+
+        .rules {
+
+            @media screen and (max-width:48em) {
+                p {
+                    margin-top:1rem;
+                }
+            }
         }
 
         a {
@@ -376,13 +414,53 @@ section {
     }
     
     &__container {
+        position:relative;
+
+        &:after {
+            content:'';
+            position:absolute;
+            left:28%;
+            top:5%;
+            height:100%;
+            width:100%;
+            background:url('/../assets/img/spots-left.gif') no-repeat;
+            z-index:60;
+
+            @media screen and (max-width:90em) {
+                background-size:contain;
+                width:70%;
+                height:40%;
+                left:32%;
+            }
+
+            @media screen and (max-width:64em) {
+                left:25%;
+                top:10%;
+            }
+
+            @media screen and (max-width:48em) {
+                top:5%;
+                left:17%;
+            }
+
+            @media screen and (max-width:32em) {
+                left:0;
+                height:60%;
+                width:100%;
+            }
+        }
 
         .header {
             margin-bottom:3rem;
             position:relative;
+            z-index:80;
 
             @media screen and (max-width:90em) {
                 margin-bottom:1rem;
+            }
+
+            @media screen and (max-width:32em) {
+                padding-top:1rem;
             }
 
             h2 {
@@ -392,14 +470,14 @@ section {
                 position:relative;
 
                 @media screen and (max-width:32em) {
-                    font-size:1.75rem;
+                    font-size:1.5rem;
                 }
 
                 strong {
                     font-size:2.25rem;
 
                     @media screen and (max-width:32em) {
-                        font-size:2rem;
+                        font-size:1.75rem;
                     }
                 }
             }
@@ -427,19 +505,21 @@ section {
                 @media screen and (max-width:90em) {
                     font-size:8rem;
                 }
+
+                @media screen and (max-width:32em) {
+                    font-size:3rem;
+                }
             }
         }
 
         p {
             font-size:1.4rem;
             max-width:65%;
+            position:relative;
+            z-index:80;
 
             @media screen and (max-width:90em) {
                 font-size:1.1rem;
-
-                &:last-of-type {
-                    margin-bottom:3rem;
-                }
             }
 
             @media screen and (max-width:48em) {
@@ -448,6 +528,12 @@ section {
 
             @media screen and (max-width:32em) {
                 font-size:1rem;
+            }
+
+            &:last-of-type {
+                @media screen and (max-width:32em) {
+                    margin-bottom:6rem;
+                }
             }
         }
     }
@@ -462,6 +548,7 @@ section {
         display:flex;
         justify-content:center;
         align-items:center;
+        z-index:100;
 
         &:before {
             content:'';
@@ -490,7 +577,7 @@ section {
             @media screen and (max-width:32em) {
                 width:130%;
                 left:-15%;
-                top:-30px;
+                top:-26px;
             }
         }
 
@@ -527,6 +614,10 @@ section {
         @media screen and (max-width:64em) {
             padding:5rem 1rem;
         }
+
+        @media screen and (max-width:32em) {
+            padding:1rem;
+        }
     }
     
     &__container {
@@ -551,6 +642,10 @@ section {
                 p {
                     margin-top:2rem;
                     margin-bottom:0;
+
+                    @media screen and (max-width:32em) {
+                        margin-top:0;
+                    }
                 }
 
 
@@ -640,7 +735,7 @@ section {
                                 flex-direction:column;
 
                                 @media screen and (max-width:32em) {
-                                    width:50%;
+                                    margin-bottom:1rem;
                                 }
 
                                 input {
@@ -679,6 +774,7 @@ section {
 
                                 @media screen and (max-width:32em) {
                                     width:100%;
+                                    margin-bottom:1rem;
 
                                     input {
                                         width:auto;
@@ -715,7 +811,8 @@ section {
                                 }
 
                                 @media screen and (max-width:32em) {
-                                    width:50%;
+                                    width:100%;
+                                    margin-bottom:1rem;
                                 }
 
                                 input {
@@ -777,24 +874,30 @@ section {
     &:before {
         content:'';
         position:absolute;
-        width:80%;
-        height:65%;
+        width:100%;
+        height:100%;
         left:10%;
-        top:12%;
+        top:-5%;
         background:url('/../assets/img/congrats-fireworks.gif') no-repeat;
         background-size:contain;
         z-index:60;
 
+        @media screen and (max-width:90em) {
+            top:-8%;
+        }
+
         @media screen and (max-width:64em) {
-            top:18%;
+            top:0;
+            left:0;
         }
 
         @media screen and (max-width:48em) {
-            top:23%;
+            top:10%;
+            height:80%;
         }
 
         @media screen and (max-width:32em) {
-            top:20%;
+            top:13%;
         }
     }
 
@@ -823,7 +926,7 @@ section {
                 font-weight:700;
                 text-transform:uppercase;
                 margin-bottom:0;
-                margin-top:10rem;
+                margin-top:7rem;
                 line-height:1;
                 text-align:center;
 
@@ -837,12 +940,11 @@ section {
                 }
 
                 @media screen and (max-width:48em) {
-                    margin-top:12rem;
                     font-size:3rem;
+                    margin-top:8rem;
                 }
 
                 @media screen and (max-width:32em) {
-                    margin-top:8rem;
                     font-size:2rem;
                 }
             }
@@ -861,10 +963,12 @@ section {
 
             .bottom {
                 bottom:0;
-                position:absolute;
+                position:relative;
                 max-width:65%;
                 left:17.5%;
                 font-size:1.1rem;
+                margin-top:10rem;
+                z-index:100%;
 
                 @media screen and (max-width:90em) {
                     font-size:1rem;
@@ -873,14 +977,7 @@ section {
                 @media screen and (max-width:64em) {
                     max-width:75%;
                     left:12.5%;
-                }
-
-                @media screen and (max-width:48em) {
-                    bottom:10rem;
-                }
-
-                @media screen and (max-width:32em) {
-                    bottom:0;
+                    margin-top:7rem;
                 }
 
                 .socials {
@@ -929,20 +1026,13 @@ section {
         position:absolute;
         width:65%;
         height:65%;
-        left:16%;
+        left:16.5%;
         top:12%;
         background:url('/../assets/img/sorry-stamp.png') no-repeat;
         background-size:contain;
         z-index:60;
 
         @media screen and (max-width:90em) {
-            width:55%;
-            height:55%;
-            left:22.5%;
-            top:12.5%;
-        }
-
-        @media screen and (max-width:64em) {
             width:75%;
             height:75%;
             left:11.5%;
@@ -952,7 +1042,7 @@ section {
             width:120%;
             height:50vh;
             left:-12%;
-            top:17%;
+            top:10%;
         }
     }
 
@@ -985,7 +1075,7 @@ section {
                 line-height:1;
 
                 @media screen and (max-width:90em) {
-                    margin-top:4rem;
+                    margin-top:5rem;
                 }
 
                 @media screen and (max-width:64em) {
@@ -994,18 +1084,21 @@ section {
                 }
 
                 @media screen and (max-width:48em) {
-                    margin-top:12rem;
                     font-size:3rem;
                 }
 
                 @media screen and (max-width:32em) {
-                    margin-top:8rem;
                     font-size:2rem;
                 }
             }
 
             h3 {
                 font-size:2.25rem;
+                margin-bottom:10rem;
+
+                @media screen and (max-width:90em) {
+                    margin-bottom:5rem;
+                }
 
                 @media screen and (max-width:64em) {
                     font-size:1.75rem;
@@ -1017,21 +1110,24 @@ section {
 
                 @media screen and (max-width:32em) {
                     font-size:1.5rem;
+                    margin-bottom:3rem;
                 }
             }
 
             .bottom {
                 bottom:0;
-                position:absolute;
-                max-width:100%;
+                position:relative;
+                max-width:80%;
+                left:10%;
                 font-size:1.1rem;
 
                 @media screen and (max-width:90em) {
                     font-size:1rem;
                 }
 
-                @media screen and (max-width:48em) {
-                    bottom:10rem;
+                @media screen and (max-width:64em) {
+                    max-width:100%;
+                    left:0;
                 }
 
                 @media screen and (max-width:32em) {
@@ -1060,6 +1156,11 @@ section {
                         text-transform: uppercase;
                         transition:all .2s ease;
                         padding:.4rem 2rem;
+
+                        @media screen and (max-width:68em) {
+                            font-size:.9rem;
+                            padding:.5rem 2rem;
+                        }
 
                         @media screen and (max-width:48em) {
                             width:100%;

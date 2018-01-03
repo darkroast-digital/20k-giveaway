@@ -37,7 +37,6 @@ $container['view'] = function ($container) {
     $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
 
     $view->getEnvironment()->addGlobal('flash', $container['flash']);
-    $view->getEnvironment()->addGlobal('url', $container->settings['url']);
 
     return $view;
 };

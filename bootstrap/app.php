@@ -29,7 +29,6 @@ $app = new Slim\App([
         'debug' => getenv('WHOOPS_DEBUG') === 'true',
         'whoops.editor' => 'sublime',
         'displayErrorDetails' => getenv('APP_DEBUG') === 'true',
-        'url' => getenv('APP_URL'),
 
         'app' => [
             'name' => getenv('APP_NAME')
