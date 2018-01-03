@@ -7,7 +7,8 @@ class AddTempTable extends Migration
 {
     public function up()
     {
-        $this->schema->create('temp', function (Blueprint $table) {
+        $this->schema->create('temps', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('ip');
             $table->timestamp('last_active');
         });
@@ -15,7 +16,7 @@ class AddTempTable extends Migration
 
     public function down()
     {
-        $this->schema->drop('temp');
+        $this->schema->drop('temps');
 
     }
 }

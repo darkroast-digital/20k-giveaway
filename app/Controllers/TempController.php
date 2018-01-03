@@ -12,6 +12,7 @@ class TempController extends Controller
         $ip = $_POST['ip'];
 
         $temp = Temp::firstOrCreate(['ip' => $ip]);
+        return $ip;
     }
 
     public function delete($request, $response, $args)
