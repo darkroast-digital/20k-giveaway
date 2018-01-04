@@ -14,7 +14,7 @@ class HomeController extends Controller
     {
         $numContacts = count(Contact::get()->where('name', '!=', NULL));
         $tempCount = count(Temp::get());
-        $spotsLeft = 1 - $numContacts - $tempCount;
+        $spotsLeft = 25 - $numContacts - $tempCount;
 
         // if ($numContacts > 25) {
         //     $spotsLeft = $numContacts % 25;

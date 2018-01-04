@@ -16,7 +16,7 @@ class SiteController extends Controller
         $count = count(Contact::get()->where('name', '!=', NULL));
         $tempCount = count(Temp::get());
         $total = $count + $tempCount;
-        if (($count >= 1) || ($total >= 1)) {
+        if (($count >= 25) || ($total >= 25)) {
             return $response->withRedirect($this->router->pathFor('noSpots'));
         }
 
@@ -38,11 +38,11 @@ class SiteController extends Controller
         $count = count(Contact::get()->where('name', '!=', NULL));
         $tempCount = count(Temp::get());
         $total = $count + $tempCount;
-        if (($count >= 1) || ($total >= 1)) {
+        if (($count >= 25) || ($total >= 25)) {
             return $response->withRedirect($this->router->pathFor('noSpots'));
         }
 
-        $spotsLeft = 1 - $total;
+        $spotsLeft = 25 - $total;
 
         return $this->view->render($response, 'count.twig', compact('spotsLeft'));
     }

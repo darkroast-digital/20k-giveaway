@@ -15,7 +15,7 @@ class FormController extends Controller
 
         $count = count(Contact::get()->where('name', '!=', NULL));
 
-        if ($count >= 1) {
+        if ($count >= 25) {
             return $response->withRedirect($this->router->pathFor('noSpots'));
         }
 
