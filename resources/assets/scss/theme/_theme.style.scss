@@ -13,17 +13,18 @@ section {
     overflow-x:hidden;
 
     &.home {
-        background:url('/../assets/img/home-bg.png') no-repeat;
+        background:url('/../assets/img/windsor_vector-01.png') no-repeat;
         background-color:#E8E8E8;
-        background-size:contain;
-        background-position-y:1rem;
+        background-size:cover;
+        background-position-y:-13rem;
+
+        @media screen and (max-width:90em) {
+            background-position-y:-12rem;
+        }
 
         @media screen and (max-width:64em) {
             background-size:auto 87vh;
-        }
-
-        @media screen and (max-width:32em) {
-            background-position-x:-2rem;
+            background-position-x:-3rem;
             background-position-y:0;
         }
 
@@ -32,6 +33,10 @@ section {
             height:84vh;
             justify-content:flex-start;
             padding:5rem;
+
+            @media screen and (max-width:90em) {
+                padding-top:2rem;
+            }
 
             @media screen and (max-width:32em) {
                 padding:1rem;
