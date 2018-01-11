@@ -402,6 +402,16 @@
         //     console.log('Fail: ' + data);
         // });
     });
+
+    window.addEventListener('unload', function(e){
+        $.ajax({
+            type: 'post',
+            url: "{{ path_for('log.delete') }}",
+            data: {
+                ip: ip
+            }
+        });
+    });
 </script>
 
 {% endblock %}
