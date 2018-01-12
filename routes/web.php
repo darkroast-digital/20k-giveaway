@@ -30,5 +30,6 @@ $app->post('/sorry', FormController::class . ':subscribe')->setName("subscribeSu
 
 $app->post('/log', TempController::class . ':log')->setName("log");
 $app->post('/log/delete', TempController::class . ':delete')->setName("log.delete");
+$app->post('/log/truncate', TempController::class . ':truncate')->setName("log.truncate");
 
 // $app->get('/batchSend', SiteController::class . ':batchSend')->setName('batchSend');

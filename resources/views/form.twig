@@ -373,7 +373,14 @@
         // });
     }, 10000);
 
-    window.addEventListener('beforeunload', function(e) {
+    setInterval(function(){
+        $.ajax({
+            type: 'post',
+            url: "{{ path_for('log.truncate') }}"
+        });
+    }, 60000);
+
+    $(window).bind('beforeunload', function(e) {
         $.ajax({
             type: 'post',
             url: "{{ path_for('log.delete') }}",

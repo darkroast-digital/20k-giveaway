@@ -23,5 +23,11 @@ class TempController extends Controller
 
         return $temp;
     }
+
+    public function truncate($request, $response, $args)
+    {
+        Temp::truncate();
+
+    }
 }
 
