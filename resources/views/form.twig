@@ -403,7 +403,9 @@
         // });
     });
 
-    window.addEventListener('unload', function(e){
+    $(window).on("unload", function(){
+        alert('unloading');
+
         $.ajax({
             type: 'post',
             url: "{{ path_for('log.delete') }}",
@@ -412,6 +414,11 @@
             }
         });
     });
+
+    // check ips coming in
+    // compare against database entries (ips)
+    // find one ip in database that doesn't match one coming in
+    // delete that one
 </script>
 
 {% endblock %}
