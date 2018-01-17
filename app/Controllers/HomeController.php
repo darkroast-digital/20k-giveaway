@@ -14,12 +14,7 @@ class HomeController extends Controller
     {
         $numContacts = count(Contact::get()->where('name', '!=', NULL));
         $tempCount = count(Temp::get());
-        $spotsLeft = 25 - $numContacts - $tempCount;
-
-        // if ($numContacts > 25) {
-        //     $spotsLeft = $numContacts % 25;
-        //     $spotsLeft = 25 - $spotsLeft;
-        // }
+        $spotsLeft = 50 - $numContacts - $tempCount;
 
         return $this->view->render($response, 'home.twig');
     }

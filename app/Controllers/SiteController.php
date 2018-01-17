@@ -15,8 +15,9 @@ class SiteController extends Controller
         
         $count = count(Contact::get()->where('name', '!=', NULL));
         $tempCount = count(Temp::get());
+
         $total = $count + $tempCount;
-        if (($count >= 25) || ($total >= 25)) {
+        if (($count >= 50) || ($total >= 50)) {
             return $response->withRedirect($this->router->pathFor('noSpots'));
         }
 
@@ -37,12 +38,13 @@ class SiteController extends Controller
     {
         $count = count(Contact::get()->where('name', '!=', NULL));
         $tempCount = count(Temp::get());
+        
         $total = $count + $tempCount;
-        if (($count >= 25) || ($total >= 25)) {
+        if (($count >= 50) || ($total >= 50)) {
             return $response->withRedirect($this->router->pathFor('noSpots'));
         }
 
-        $spotsLeft = 25 - $total;
+        $spotsLeft = 50 - $total;
 
         return $this->view->render($response, 'count.twig', compact('spotsLeft'));
     }
@@ -52,20 +54,20 @@ class SiteController extends Controller
         $mg = Mailgun::create('key-1715c074f053673f6e3c4c79e8595390');
 
         $clients = Contact::where('name', NULL)->get();
-        $to = array();
-
-        foreach($clients as $c) {
-            array_push($to, $c->email);
-        }
 
         $orderBody = $this->view->fetch('mail/batch.twig');
 
-        $mg->messages()->send('darkroast.co', [
-          'from'    => '20k@darkroast.co',
-          'to'      => $to,
-          'subject' => '20K Giveaway - New spots have opened up for ' . date('l, F jS') . '!',
-          'html'    => $orderBody
-        ]);
+        foreach($clients as $c) {
+            $mg->messages()->send('darkroast.co', [
+              'from'    => '20k@darkroast.co',
+              'to'      => $c->email,
+              'subject' => '20K Giveaway - New spots have opened up for ' . date('l, F jS') . '!',
+              'html'    => $orderBody
+            ]);
+        }
+
+
+
     }
 }
 
