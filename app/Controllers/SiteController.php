@@ -11,17 +11,19 @@ class SiteController extends Controller
 {
     public function form($request, $response, $args)
     {
-        header("refresh:1200;url=/");
+        return $response->withRedirect($this->router->pathFor('noSpots'));
+
+        // header("refresh:1200;url=/");
         
-        $count = count(Contact::get()->where('name', '!=', NULL));
-        $tempCount = count(Temp::get());
+        // $count = count(Contact::get()->where('name', '!=', NULL));
+        // $tempCount = count(Temp::get());
 
-        $total = $count + $tempCount;
-        if (($count >= 50) || ($total >= 50)) {
-            return $response->withRedirect($this->router->pathFor('noSpots'));
-        }
+        // $total = $count + $tempCount;
+        // if (($count >= 50) || ($total >= 50)) {
+        //     return $response->withRedirect($this->router->pathFor('noSpots'));
+        // }
 
-        return $this->view->render($response, 'form.twig');
+        // return $this->view->render($response, 'form.twig');
     }
 
     public function success($request, $response, $args)
@@ -36,17 +38,19 @@ class SiteController extends Controller
 
     public function count($request, $response, $args)
     {
-        $count = count(Contact::get()->where('name', '!=', NULL));
-        $tempCount = count(Temp::get());
+        return $response->withRedirect($this->router->pathFor('noSpots'));
         
-        $total = $count + $tempCount;
-        if (($count >= 50) || ($total >= 50)) {
-            return $response->withRedirect($this->router->pathFor('noSpots'));
-        }
+        // $count = count(Contact::get()->where('name', '!=', NULL));
+        // $tempCount = count(Temp::get());
+        
+        // $total = $count + $tempCount;
+        // if (($count >= 50) || ($total >= 50)) {
+        //     return $response->withRedirect($this->router->pathFor('noSpots'));
+        // }
 
-        $spotsLeft = 50 - $total;
+        // $spotsLeft = 50 - $total;
 
-        return $this->view->render($response, 'count.twig', compact('spotsLeft'));
+        // return $this->view->render($response, 'count.twig', compact('spotsLeft'));
     }
 
     public function batchSend($request, $response, $args)
